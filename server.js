@@ -4,11 +4,22 @@ const postRoutes = require('./routes/post.routes');
 const cookieParser = require('cookie-parser');
 require('dotenv').config({ path: './config/.env' });
 require('./config/db');
-const {checkUser, requireAuth} = require('./middleware/auth.middleware');
+const { checkUser, requireAuth } = require('./middleware/auth.middleware');
+const cors = require('cors')
+
 const app = express();
 
 
 //Permettent de traiter les données qui vont transitées d'un point A à un point B.
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  'allowedHeaders': ['sessionId', 'Content-Type'],
+  'exposedHeaders': ['sessionId'],
+  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  'preflightContinue': false
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
