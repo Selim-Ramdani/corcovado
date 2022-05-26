@@ -1,0 +1,44 @@
+@import 'variables';
+
+.PostItem {
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #efefef;
+    border-radius: 3px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 5px 15px;
+        border-bottom: 1px solid #dfdfdf;
+        color: $color-muted;
+
+        &__author {
+            a {
+                padding: 0;
+            }
+        }
+
+        &__actions {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        &__date {
+            font-size: .8rem;
+        }
+
+        &__likes {
+            flex: 0 0 90px;
+            margin-left: 10px;
+            text-align: right;
+            font-size: .9rem;
+            color: $color-base;
+        }
+    }
+
+    &__text {
+        padding: 15px;
+        margin: 0;
+    }
+}

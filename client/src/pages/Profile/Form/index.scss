@@ -1,0 +1,19 @@
+.ProfileForm {
+    &__field {
+        display: block;
+        margin-bottom: 20px;
+
+        &__label {
+            margin: 0 0 5px;
+        }
+
+        .Input,
+        .Textarea {
+            max-width: 400px;
+        }
+    }
+
+    .Button + .Button {
+        margin-left: 10px;
+    }
+}
